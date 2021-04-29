@@ -1,0 +1,27 @@
+
+def encrypt():
+  encryption_option = input("Would you like to Encode or Decode? ") 
+  should_encode = "encode" in encryption_option.lower()
+  should_decode = "decode" in encryption_option.lower()
+  cNum=int(input("What is your cipher number? "))
+  str=input("What is your message? ")
+  str2= ""
+
+  if should_encode:
+    str= str.upper()
+    for char in str:
+      str2+=(chr((ord(char)+cNum)))
+    print(str2)
+    pass
+
+  elif should_decode:
+    str= str.upper()
+    for char in str:
+      str2+=(chr((ord(char)-cNum)))
+    print(str2)
+    pass
+
+  else:
+    print("we only support encrypt/decrypt")
+
+encrypt()
